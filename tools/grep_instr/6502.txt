@@ -1,0 +1,16 @@
+BRK_impl ORA_X,ind ------- ------- ------- ORA_zpg ASL_zpg ------- PHP_impl ORA_# ASL_A ------- ------- ORA_abs ASL_abs -------
+BPL_rel ORA_ind,Y ------- ------- ------- ORA_zpg,X ASL_zpg,X ------- CLC_impl ORA_abs,Y ------- ------- ------- ORA_abs,X ASL_abs,X -------
+JSR_abs AND_X,ind ------- ------- BIT_zpg AND_zpg ROL_zpg ------- PLP_impl AND_# ROL_A ------- BIT_abs AND_abs ROL_abs -------
+BMI_rel AND_ind,Y ------- ------- ------- AND_zpg,X ROL_zpg,X ------- SEC_impl AND_abs,Y ------- ------- ------- AND_abs,X ROL_abs,X -------
+RTI_impl EOR_X,ind ------- ------- ------- EOR_zpg LSR_zpg ------- PHA_impl EOR_# LSR_A ------- JMP_abs EOR_abs LSR_abs -------
+BVC_rel EOR_ind,Y ------- ------- ------- EOR_zpg,X LSR_zpg,X ------- CLI_impl EOR_abs,Y ------- ------- ------- EOR_abs,X LSR_abs,X -------
+RTS_impl ADC_X,ind ------- ------- ------- ADC_zpg ROR_zpg ------- PLA_impl ADC_# ROR_A ------- JMP_ind ADC_abs ROR_abs -------
+BVS_rel ADC_ind,Y ------- ------- ------- ADC_zpg,X ROR_zpg,X ------- SEI_impl ADC_abs,Y ------- ------- ------- ADC_abs,X ROR_abs,X -------
+------- STA_X,ind ------- ------- STY_zpg STA_zpg STX_zpg ------- DEY_impl ------- TXA_impl ------- STY_abs STA_abs STX_abs -------
+BCC_rel STA_ind,Y ------- ------- STY_zpg,X STA_zpg,X STX_zpg,Y ------- TYA_impl STA_abs,Y TXS_impl ------- ------- STA_abs,X ------- -------
+LDY_# LDA_X,ind LDX_# ------- LDY_zpg LDA_zpg LDX_zpg ------- TAY_impl LDA_# TAX_impl ------- LDY_abs LDA_abs LDX_abs -------
+BCS_rel LDA_ind,Y ------- ------- LDY_zpg,X LDA_zpg,X LDX_zpg,Y ------- CLV_impl LDA_abs,Y TSX_impl ------- LDY_abs,X LDA_abs,X LDX_abs,Y -------
+CPY_# CMP_X,ind ------- ------- CPY_zpg CMP_zpg DEC_zpg ------- INY_impl CMP_# DEX_impl ------- CPY_abs CMP_abs DEC_abs -------
+BNE_rel CMP_ind,Y ------- ------- ------- CMP_zpg,X DEC_zpg,X ------- CLD_impl CMP_abs,Y ------- ------- ------- CMP_abs,X DEC_abs,X -------
+CPX_# SBC_X,ind ------- ------- CPX_zpg SBC_zpg INC_zpg ------- INX_impl SBC_# NOP_impl ------- CPX_abs SBC_abs INC_abs -------
+BEQ_rel SBC_ind,Y ------- ------- ------- SBC_zpg,X INC_zpg,X ------- SED_impl SBC_abs,Y ------- ------- ------- SBC_abs,X INC_abs,X -------
